@@ -45,9 +45,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/pdecat/dear2dear</connection>
-        <developerConnection>scm:git:git@github.com:pdecat/dear2dear</developerConnection>
-        <url>https://github.com/pdecat/dear2dear/tree/master/parent</url>
+        <connection>scm:git:https://github.com/pdecat/maven-parent</connection>
+        <developerConnection>scm:git:git@github.com:pdecat/maven-parent</developerConnection>
+        <url>https://github.com/pdecat/maven-parent</url>
         <tag>HEAD</tag>
     </scm>
 
