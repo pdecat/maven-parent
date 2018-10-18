@@ -207,9 +207,17 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>com.mycila.maven-license-plugin</groupId>
-                    <artifactId>maven-license-plugin</artifactId>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
                     <version>3.0</version>
+                    <configuration>
+                        <header>src/main/res/raw/license_short.txt</header>
+                        <excludes>
+                            <exclude>README.md</exclude>
+                            <exclude>project.properties</exclude>
+                            <exclude>gen-external-apklibs/**</exclude>
+                        </excludes>
+                    </configuration>
                 </plugin>
 
                 <plugin>
