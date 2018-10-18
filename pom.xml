@@ -41,7 +41,11 @@
     <properties>
         <environment>development</environment>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java-version>1.7</java-version>
+        <java-version>1.8</java-version>
+        <android-version>8.0.0_r2</android-version>
+        <android-platform>28</android-platform>
+        <android-support-version>28.0.0</android-support-version>
+        <androidannotations-version>4.5.1</androidannotations-version>
     </properties>
 
     <scm>
@@ -64,56 +68,127 @@
             <dependency>
                 <groupId>android</groupId>
                 <artifactId>android</artifactId>
-                <version>8.0.0_r2</version>
+                <version>${android-version}</version>
                 <scope>provided</scope>
             </dependency>
 
             <dependency>
                 <groupId>com.android.support</groupId>
                 <artifactId>support-compat</artifactId>
-                <version>27.1.1</version>
+                <version>${android-support-version}</version>
                 <type>aar</type>
             </dependency>
 
             <dependency>
-                <groupId>com.google.android.gms</groupId>
-                <artifactId>play-services-base</artifactId>
-                <version>9.4.0</version>
+                <groupId>com.android.support</groupId>
+                <artifactId>support-v4</artifactId>
+                <version>${android-support-version}</version>
                 <type>aar</type>
             </dependency>
 
             <dependency>
                 <groupId>com.google.android.gms</groupId>
                 <artifactId>play-services-ads</artifactId>
-                <version>9.4.0</version>
+                <version>12.0.1</version>
                 <type>aar</type>
+
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-ads-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-ads-lite-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-analytics-impl-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-analytics-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-base-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-basement-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-gass-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-tagmanager-v4-impl-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-tasks-license</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>
                 <groupId>com.google.android.gms</groupId>
                 <artifactId>play-services-analytics</artifactId>
-                <version>9.4.0</version>
+                <version>12.0.1</version>
                 <type>aar</type>
-            </dependency>
 
-            <dependency>
-                <groupId>com.google.android</groupId>
-                <artifactId>support-v4</artifactId>
-                <version>r7</version>
-                <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-ads-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-ads-lite-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-analytics-impl-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-analytics-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-base-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-basement-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-gass-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-tagmanager-v4-impl-license</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.android.gms</groupId>
+                        <artifactId>play-services-tasks-license</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>
                 <groupId>org.androidannotations</groupId>
                 <artifactId>androidannotations</artifactId>
-                <version>4.4.0</version>
+                <version>${androidannotations-version}</version>
                 <scope>provided</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.androidannotations</groupId>
                 <artifactId>androidannotations-api</artifactId>
-                <version>4.4.0</version>
+                <version>${androidannotations-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -229,7 +304,7 @@
                     <configuration>
                         <sdk>
                             <!-- platform or api level (api level 4 = platform 1.6) -->
-                            <platform>26</platform>
+                            <platform>${android-platform}</platform>
                         </sdk>
                         <failOnDuplicatePackages>false</failOnDuplicatePackages>
                         <undeployBeforeDeploy>true</undeployBeforeDeploy>
